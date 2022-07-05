@@ -1,0 +1,174 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.Win32;
+namespace TNBS
+{
+    public partial class Form1 : Form
+    {
+        string url = ".com";
+        int a = 0;
+        int c = 4;
+        public Form1()
+        {
+            InitializeComponent();
+            groupBox1.Visible = false;
+            button2.Visible = false;
+            button3.Visible = false;
+            textBox2.Visible = false;
+            textBox3.Visible = false;
+            button8.Visible = false;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Visible = false;
+            button2.Visible = false;
+
+
+            button8.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox3.Visible = false;
+            button3.Visible = false;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            button7.Text = textBox2.Text;
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            button8.Text = textBox3.Text;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (a == 1)
+            {
+                System.Diagnostics.Process.Start("http://" + textBox2.Text + url);
+            }
+            if (a == 0)
+            {
+                textBox2.Visible = true;
+                button2.Visible = true;
+                a++;
+            }
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (c == 5)
+            {
+                System.Diagnostics.Process.Start("http://" + textBox3.Text + url);
+            }
+            if (c == 4)
+            {
+                textBox3.Visible = true;
+                button3.Visible = true;
+                c++;
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = false;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                reg.SetValue("TNBS", Application.ExecutablePath.ToString());
+                MessageBox.Show("successfully saved", "Traslox's Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+
+            if (checkBox1.Checked == false)
+            {
+                RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                reg.DeleteValue("TNBS", true);
+                MessageBox.Show("successfully saved", "Traslox's Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://" + "github" + url);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://" + "StackOverflow" + url);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://" + "Udemy" + url);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://" + "amazon" + url + ".tr");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://" + "reddit" + url);
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://" + "twitter" + url);
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://" + "youtube" + url);
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://" + "twitch" + url);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://" + textBox1.Text + url);
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender: null, e: null);
+            }
+        }
+    }
+}
