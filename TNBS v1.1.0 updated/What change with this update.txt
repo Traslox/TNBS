@@ -1,0 +1,4 @@
+Some Bugs Fixed
+Search Settings interface is updated
+
+I working on save user's data (means changes)
