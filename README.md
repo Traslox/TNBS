@@ -5,3 +5,4 @@ It does not have the authority and permission to access this information.
 However, if you want to use the QR code system, we get permission for the camera. This means we have permission for the camera.
 This application doing with .Net Framework 4.8 and means only use able in Windows.
 Applies to version 1.4.1
+https://www.youtube.com/watch?v=KjdNujbOGU8&t=3s
