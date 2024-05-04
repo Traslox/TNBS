@@ -7,3 +7,4 @@ This application doing with .Net Framework 4.8 and means only use able in Window
 Applies to version 1.4.1
 
 # Development stopped
+Stopped in 2024
