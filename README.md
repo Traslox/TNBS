@@ -6,4 +6,4 @@ However, if you want to use the QR code system, we get permission for the camera
 This application doing with .Net Framework 4.8 and means only use able in Windows.
 Applies to version 1.4.1
 
-#Development stopped
+# Development stopped
