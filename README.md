@@ -8,3 +8,4 @@ Applies to version 1.4.1
 
 # Development stopped
 Stopped in 2024
+[Click for TNBS 2](https://github.com/Traslox/TNBS-2)
